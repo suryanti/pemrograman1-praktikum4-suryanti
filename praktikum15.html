@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Praktikum 5</title>
+
+        <script>
+            var mincar = 5;
+            pola_username=/^[a-zA-z0-9\_\-]{8,100}$/;
+            pola_email=/^[a-zA-z0-9._-]+@[a-zA-z0.-]+\.[a-zA-z]{2,4}$/;
+
+            function validasi_input(){
+                if(frregistrasi.txtiduser.value==""){
+                    alert("ID.User masih kosong!");
+                    frregistrasi.txtiduser.focus();
+                    return(false);
+                }
+                if(frregistrasi.txtiduser.value.lenght<mincar){
+                    alert("Panjang ID.user minimal 5 karakter!");
+                    frregistrasi.txtiduser.focus();
+                    return(false);
+                }
+                if(!pola_username.test(frregistrasi.txtusername.value)){
+                    alert('Username minimal 8 karakter dan hanya boleh Huruf atau Angka');
+                    frregistrasi.txtusername.focus();
+                    return (false);
+                }
+                if(frregistrassi.txtpass.value==""){
+                    alert('password harus diisi');
+                    frregistrasi.txtpass.focus();
+                    return false;
+                }
+                if(!pola_email.test(frregistrasi.txtemail.value)){
+                    alert('Penulisan email tidak benar');
+                    frregistrasi.txtemail.focus();
+                    return false;
+                }
+                return (true);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="frregistrasi"method="post"action=""target=""onsubmit="return validasi_input()">
+        <table align="center">
+            <tr>
+               <td>
+                   <fieldset>
+                   <legend>Form Registrasi</legend>
+                   <label for="txtiduser">ID. User</label><br>
+                   <input type="text" name="txtiduser" size="35" placeholder="ID. User"><br>
+                   <label for="txtusername">Username</label><br>
+                   <input type="text" name="txtusername" size="35" placeholder="Username"><br>
+                   <label for="txtpass">Password</label><br>
+                   <input type="password" name="txtpass" size="35" placeholder="Password"><br>
+                   <label for="txtemail">Email</label><br>
+                   <input type="email" name="txtemail" size="35" placeholder="Email"><br>
+                   <hr>
+                   <input type="submit" value="Login">&nbsp;<input type="reset" value="Batal">
+                    </fieldset>
+                   
+               </td> 
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>
+
+<!-- 
+    baris 1. tag pembuka html
+    baris 2. tag pembuka head
+    baris 3. tag pembuka title yang digunakan untuk membuat judul (dengan judul Praktikum 5) dan ditutup dengan tag penutup title
+    
+    baris 5. tag pembuka script/javascript
+    baris 6. variabel mincar diberi nilai 5 dengan  type data number
+    baris 7. pola_username hanya bisa menggunakan a-z, A-Z, 0-9 memiliki nilai minimal 8 dan maksimalnya 100
+    baris 8. pola_email hanya bisa menggunakan a-z, A-Z, 0-9 harus menggunakan tanda @ a-zA-z0
+
+    baris 10. mendenifinisikan / membuat function dengan nama validasi_input, tag pembuka function
+    baris 11. jika nilai dari form frregistrasi dengan element input txtiduser bernilai kosong, tag pembuka if
+    baris 12. maka akan muncul alert (kotak peringatan) "ID.User masih kosong!"
+    baris 13. form frregistrasi dengan element input txtiduser bernilai kosong tersebut akan focus (jika ID.User belum diisi/kosong)
+    baris 14. tidak bisa mengakses untuk kembali (return false)
+    baris 15. tag penutup if 
+    baris 16. jika nilai dari form frregistrasi dengan element input txtiduser bernilai lenght kurang dari mincar, tag pembuka if
+    baris 17. maka akan muncul alert (kotak peringatan) "panjang ID.User minimal 5 karakter!"
+    baris 18. form frregistrasi dengan element input txtiduser bernilai lenght kurang dari mincar tersebut akan focus (jika lenght kurang dari mincar)
+    baris 19. tidak bisa mengakses untuk kembali (return false)
+    baris 20. tag penutup if
+    baris 21. jika !pola_username.test mengambil nilai dari form frregistrasi dengan element input txtusername, tag pembuka if
+    baris 22. maka akan muncul alert (kotak peringatan) 'Username minimal 8 karakter dan hanya boleh Huruf atau Angka'
+    baris 23. form frregistrasi dengan element input txtusername akan focus 
+    baris 24. tidak bisa mengakses untuk kembali (return false)
+    baris 25. tag penutup if
+    baris 26. jika nilai dari form frregistrasi dengan element input txtpass bernilai kosong, tag pembuka if
+    baris 27. maka akan muncul alert (kotak peringatan) 'password harus diisi'
+    baris 28. form frregistrasi dengan element input txtpass bernilai kosong tersebut akan focus (jika password belum diisi/kosong)
+    baris 29. tidak bisa mengakses untuk kembali (return false)
+    baris 30. tag penutup if
+    baris 31. jika !pola_email.test mengambil nilai dari form frregistrasi dengan element input txtemail, tag pembuka if
+    baris 32. maka akan muncul alert (kotak peringatan) 'Penulisan email tidak benar'
+    baris 33. form frregistrasi dengan element input txtemail akan focus (jika Penulisan email tidak benar)
+    baris 34. tidak bisa mengakses untuk kembali (return false)
+    baris 35. tag penutup if
+    baris 36. tidak bisa mengakses untuk kembali (return false)
+    baris 37. tag penutup function
+    baris 38. tag penutup script/javascript
+    baris 39. tag penutup head
+    baris 40. tag pembuka body
+    baris 41. tag pembuka form dengan nama frregistrasi, method nya post (tidak terlihat dihalaman web, action nya kosong, target nya kosong , dan onsubmit bernilai return validasi_input
+    baris 42. tag pembuka table dengan posisi/rata tengah
+    baris 43. tag pembuka tr (baris)
+    baris 44. tag pembuka td (kolom)
+    baris 45. tag pembuka fieldset
+    baris 46. tag pembuka legend dengan nilai Form Registrasi dan tag penutup legend
+    baris 47. tag pembuka label untuk txtiduser dengan nilai ID.User dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 48. tag pembuka input dengan type text yang diberi nama txtiduser dengan ukuran 35 dan placeholder/diberi bayangan ID.User, ganti baris/enter
+    baris 49. tag pembuka label untuk txtusername dengan nilai Username dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 50. tag pembuka input dengan type text yang diberi nama txtusername dengan ukuran 35 dan placeholder/diberi bayangan username, ganti baris/enter
+    baris 51. tag pembuka label untuk txtpass dengan nilai password dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 52. tag pembuka input dengan type password yang diberi nama txtpass dengan ukuran 35 dan placeholder/diberi bayangan password, ganti baris/enter
+    baris 53. tag pembuka label untuk txtemail dengan nilai Email dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 54. tag pembuka input dengan type email yang diberi nama txtemail dengan ukuran 35 dan placeholder/diberi bayangan email, ganti baris/enter
+    baris 55. tag pembuka hr/garis
+    baris 56. tag pembuka input dengan type submit yang bernilai login (&nbsp => pengganti spasi) tag pembuka input dengan type reset yang bernilai batal
+    baris 57. tag penutup fieldset  
+
+    baris 59. tag penutup td (kolom)
+    baris 60. tag penutup tr (kolom)
+    baris 61. tag penutup table
+    baris 62. tag penutup form
+    baris 63. tag penutup body
+    baris 64. tag penutup html
+-->

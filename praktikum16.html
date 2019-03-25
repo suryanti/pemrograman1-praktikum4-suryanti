@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Praktikum 6</title>
+
+    <script>
+        var vid_user, vpassword, vlev_user;
+
+        function login () {
+            vid_user = (frlogin.txtiduser.value);
+            vpassword = (frlogin.txtpass.value);
+            vlev_user = (frlogin.cblevuser.value);
+
+            if(vid_user == ""){
+                window.alert("ID.User belum diisi");
+                frlogin.txtiduser.focus();
+
+                return false;
+            }else if(vpassword == "")
+                window.alert("password belum diisi");
+                frlogin.txtpass.focus();
+
+                return false;
+            }else if(vlev_user == "")
+                window.alert("level user belum diisi");
+
+                return false;
+            }else{
+                window.alert("Anda login sebagai "+vlev_user);
+            }
+
+            return true;
+                
+        }
+       </script>
+    </head>
+    <body>
+
+        <form name="frlogin" method="post" action="" target="" onsubmit="return login()">
+        <table align="center">
+            <tr>
+                <td>
+                    <fieldset>
+                    <legend>Login system</legend>
+                    <label for="txtiduser">ID. User</label><br>
+                    <input type="text" id="txtiduser" name="txtiduser" size="35" placeholder="ID. User"><br>
+                    <label for="txtpass">Password</label><br>
+                    <input type="password" id="txtpass" name="txtpass" size="35" placeholder="Password"><br>
+                    <label for="cblevuser">Level User</label><br>
+                    <select name=cblevuser style="width:100%">
+                        <option value="">-- Pilih Level User --</option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="User">User</option>
+                    </select><br><br>
+                    <input type="submit" value="Login">&nbsp;<input type="reset" value="Batal">
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>
+
+<!--
+    baris 1. Tag Pembuka Html
+    baris 2. Tag Pembuka Head
+    baris 3. Tag Pembuka Title yang digunakan untuk membuat judul (dengan judul Praktikum 6) dan ditutup dengan tag penutup title
+
+    baris 5. Tag Pembuka Script/javascript
+    baris 6. mendefinisikan variabel dengan nama Variabel id_user, variabel Password, variabel lev_user
+
+    baris 8. mendenifinisikan / membuat Function dengan nama login, tag pembuka function
+    baris 9. variabel id_user diambil dari form login dengan Element input txtiduser (text)
+    baris 10. variabel password diambil dari form login dengan Element input txtpass (text)
+    baris 11. variabel lev_user diambil dari form login dengan Element input cblevuser (combobox) 
+    
+    baris 13. jika variabel id_user bernilai kosong, tag pembuka if
+    baris 14. maka akan muncul kotak peringatan "ID.User belum diisi"
+    baris 15. form login dengan element input txtiduser akan fokus (jika iduser belum diisi) 
+    
+    baris 17. tidak bisa mengakses untuk kembali (return false)
+    baris 18. tag penutup if jika kemungkinan pertama salah / variabel password bernilai kosong
+    baris 19. maka akan muncul kotak peringatan "password belum diisi"
+    baris 20. form login dengan element txtpass akan fokus (jika password belum diisi) 
+    
+    baris 22. tidak bisa mengakses untuk kembali (return false)
+    baris 23. tag penutup else if, jika kemungkinan pertama dan kedua salah / variabel level user kosong
+    baris 24. maka akan muncul kotak peringatan "level user belum diisi"
+    
+    baris 26. tidak bisa mengakses untuk kembali (return false)
+    baris 27. tag penutup else if, tag pembuka else
+    baris 28. maka akan muncul kontak peringatan pada window/web yang berisi "anda login sebagai + variabel level user"
+    baris 29. tag penutup else
+   
+    baris 31. bisa mengakses untuk kembali (return true)
+
+    baris 33. tag Penutup Function
+    baris 34. Tag Penutup script/javascript
+    baris 35. Tag Penutup Head
+    baris 36. Tag Pembuka Body
+    
+    baris 38. tag pembuka form / mendefinisikan/membuat form dengan nama frlogin method nya post (tidak terlihat) action nya kosong tsrget nya kosong dengan onsubmit return login
+    baris 39. tag pembuka table dengan rata tengah
+    baris 40. tag pembuka tr (baris)
+    baris 41. tag pembuka td (kolom)
+    baris 42. Tag Pembuka fieldset
+    baris 43. tag pembuka legend dengan nilai Login system dan ditutup dengan tag penutup legend
+    baris 44. tag pembuka label untuk txtiduser dengan nilai ID.User dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 45. tag pembuka input dengan type text id nya txtiduser yang diberi nama txtiduser dengan ukuran 35 dan placeholder/diberi bayangan ID.User, ganti baris/enter
+    baris 46. tag pembuka label untuk password dengan nilai password dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 47. tag pembuka input dengan type password id nya txtpass yang diberi nama txtpass dengan ukuran 35 dan placeholder/diberi bayangan password, ganti baris/enter
+    baris 48. tag pembuka label untuk cblevuser dengan nilai cblevuser dan ditutup dengan tag penutup label, ganti baris/enter
+    baris 49. tag pembuka select dengan nama cblevuser dengan style lebar 100%
+    baris 50. tag pembuka option / isi dari select yang bernilai kosong dengan teks -- pilih level user -- dan ditutup dengan tag penutup option
+    baris 51. Tag pembuka option / select yang bernilai "Administrator" dengan teks administrator dan ditutup dengan tag penutup option
+    baris 52. Tag pembuka option / select yang bernilai "user" dengan teks user dan ditutup dengan tag penutup option
+    baris 53. Tag penutup select ganti baris/enter 2x
+    baris 54. Tag pembuka input dengan type "submit" yang bernilai "login" nonbreaking space.input/pengganti karakter spasi tag pembuka input dengan tipe reset dengan nilai batal
+    baris 55. Tag Penutup Fieldset
+    baris 56. Tag Penutup td (kolom)
+    baris 57. Tag Penutup tr (baris)
+    baris 58. Tag Penutup Table
+    baris 59. Tag Penutup Form
+    baris 60. Tag Penutup Body
+    baris 61. Tag penutup Html 
+-->
